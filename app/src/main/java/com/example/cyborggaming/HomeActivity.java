@@ -28,10 +28,19 @@ public class HomeActivity extends AppCompatActivity {
         viewgamedata = findViewById(R.id.registergamebtn1);
         updategamedata = findViewById(R.id.updatebutton);
         deletegamedata = findViewById(R.id.deletebutton);
+        Logoutbtn = findViewById(R.id.logoutbtn);
 
 
         DB = new DBHelper(this);
 
+        Logoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(intent);
+                Toast.makeText(HomeActivity.this, "Successfully Log Out!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         insertgamedata.setOnClickListener(new View.OnClickListener() {
             @Override
